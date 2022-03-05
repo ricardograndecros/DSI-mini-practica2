@@ -1,7 +1,25 @@
 <table>
-    <th>
-
-    </th>
-    <app-table-row *ngFor="let product of products;" [product]="product">
-    </app-table-row>
+    <thead>
+        <tr>
+            <th scope="col">Foto</th>
+            <th scope="col">Marca</th>
+            <th scope="col">Modelo</th>
+            <th scope="col">Año</th>
+            <th scope="col">En venta desde</th>
+            <th scope="col">Precio</th>
+            <th scope="col">PVP</th>
+            <th scope="col">Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let product of products;">
+            <td><img [src]="product.photo" alt="(sin foto!)"></td>
+            <td><p>{{product.brand | uppercase}}</p></td>
+            <td><p>{{product.model | titlecase}}</p></td>
+            <td><p>{{product.year}}</p></td>
+            <td><p>{{product.available_since}}</p></td>
+            <td><p>{{product.price | currency:'EUR':'es'}}</p></td>
+            <td><p>{{product.price * 0.21 | currency:'EUR':'es'}}</p></td>
+        </tr>
+    </tbody>
 </table>

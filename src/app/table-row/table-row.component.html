@@ -1,9 +1,9 @@
 <tr>
-    <img [src]="product.photo" alt="(sin foto!)">
-    <p>{{product.brand | uppercase}}</p>
-    <p>{{product.model | titlecase}}</p>
-    <p>{{product.year}}</p>
-    <p>{{product.available_since}}</p>
-    <p>{{product.price | currency:'EUR':'es'}}</p>
-    <p>{{product.price * 0.21 | currency:'EUR':'es'}}</p>
+    <td><img [src]="product.photo" alt="(sin foto!)"></td>
+    <td><p>{{product.brand | uppercase}}</p></td>
+    <td><p>{{product.model | titlecase}}</p></td>
+    <td><p>{{product.year}}</p></td>
+    <td><p>{{product.available_since}}</p></td>
+    <td><p>{{product.price | currency:'EUR':'es'}}</p></td>
+    <td><p>{{product.price * 0.21 | currency:'EUR':'es'}}</p></td>
 </tr>

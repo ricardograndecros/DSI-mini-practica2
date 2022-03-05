@@ -16,9 +16,10 @@ export class Product {
     }
 }
 
+
 export const product_list = [
     {
-        photo: "./lasjfñlskjfñ",
+        photo: "/assets/images/renault_scenic.jpg",
         brand: "renault",
         model: "scenic",
         year: 2007,
@@ -26,7 +27,7 @@ export const product_list = [
         price: 5000
     },
     {
-        photo: "./lasjfñlskjfñ",
+        photo: "/assets/images/volkswagen_golf.jpg",
         brand: "volkswagen",
         model: "golf",
         year: 2009,
@@ -35,7 +36,7 @@ export const product_list = [
 
     },
     {
-        photo: "./lasjfñlskjfñ",
+        photo: "/assets/images/renault_megane.jpg",
         brand: "renault",
         model: "megane",
         year: 2007,
@@ -43,7 +44,7 @@ export const product_list = [
         price: 3500
     },
     {
-        photo: "./lasjfñlskjfñ",
+        photo: "/assets/images/tesla_model3.jpg",
         brand: "tesla",
         model: "model 3",
         year: 2007,
@@ -51,7 +52,7 @@ export const product_list = [
         price: 4000
     },
     {
-        photo: "./lasjfñlskjfñ",
+        photo: "/assets/images/volkswagen_sirocco.jpg",
         brand: "volkswagen",
         model: "sirocco",
         year: 2016,
@@ -59,7 +60,7 @@ export const product_list = [
         price: 23000
     },
     {
-        photo: "./lasjfñlskjfñ",
+        photo: "/assets/images/toyota_prius.png",
         brand: "toyota",
         model: "prius",
         year: 2009,
@@ -67,7 +68,7 @@ export const product_list = [
         price: 9000
     },
     {
-        photo: "./lasjfñlskjfñ",
+        photo: "/assets/images/mercedes_v220.jpg",
         brand: "mercedes",
         model: "v220",
         year: 1999,

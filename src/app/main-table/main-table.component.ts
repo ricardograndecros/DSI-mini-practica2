@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { registerLocaleData } from '@angular/common';
-import localeEs from '@angular/common/locales/es';
 import { Product, product_list } from '../product';
+import { registerLocaleData } from '@angular/common'
+import localeEs from '@angular/common/locales/es'
 registerLocaleData(localeEs, 'es');
 
 @Component({
@@ -23,4 +23,10 @@ export class MainTableComponent implements OnInit {
     });
   }
 
+  reducePrice(index: number){
+    this.products[index].price = this.products[index].price * 0.9;
+  }
+  deleteProduct(index: number){
+    this.products.splice(index, 1);
+  }
 }

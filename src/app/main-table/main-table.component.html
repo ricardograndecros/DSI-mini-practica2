@@ -18,7 +18,7 @@
             <td><p>{{product.model | titlecase}}</p></td>
             <td><p>{{product.year}}</p></td>
             <td><p>{{product.available_since}}</p></td>
-            <td><p>{{product.price | currency:'EUR':'symbol':'.2-2':'es'}}</p></td>
+            <td><p [ngStyle]="{'background-color':(product.estado=='bueno')?'#90c390':'#c39090'}">{{product.price | currency:'EUR':'symbol':'.2-2':'es'}}</p></td>
             <td><p>{{product.price * 1.21 | currency:'EUR':'symbol':'.2-2':'es'}}</p></td>
             <td class="buttons-cell">
                 <button (click)="reducePrice(i)">Rebajar</button>

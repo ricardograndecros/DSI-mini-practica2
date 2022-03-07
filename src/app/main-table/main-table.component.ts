@@ -19,7 +19,7 @@ export class MainTableComponent implements OnInit {
 
   ngOnInit(): void {
     product_list.forEach(product => {
-      this.products.push(new Product(product.photo, product.brand, product.model, product.year, product.available_since, product.price));
+      this.products.push(new Product(product.photo, product.brand, product.model, product.year, product.available_since, product.price, product.estado));
     });
   }
 

@@ -5,14 +5,16 @@ export class Product {
     public year: number;
     public available_since: string;
     public price: number;
+    public estado: string;
 
-    constructor(photo: string, brand:string, model: string, year: number, available_since: string, price: number){
+    constructor(photo: string, brand:string, model: string, year: number, available_since: string, price: number, estado: string){
         this.photo = photo;
         this.brand = brand;
         this.model = model;
         this.year = year;
         this.available_since = available_since;
         this.price = price;
+        this.estado = estado
     }
 }
 
@@ -24,7 +26,8 @@ export const product_list = [
         model: "scenic",
         year: 2007,
         available_since: '04-2018',
-        price: 5000
+        price: 5000,
+        estado: "bueno"
     },
     {
         photo: "/assets/images/volkswagen_golf.jpg",
@@ -32,7 +35,8 @@ export const product_list = [
         model: "golf",
         year: 2009,
         available_since: '08-2019',
-        price: 2800
+        price: 2800,
+        estado: "bueno"
 
     },
     {
@@ -41,7 +45,8 @@ export const product_list = [
         model: "megane",
         year: 2007,
         available_since: '03-2018',
-        price: 3500
+        price: 3500,
+        estado: "malo"
     },
     {
         photo: "/assets/images/tesla_model3.jpg",
@@ -49,7 +54,8 @@ export const product_list = [
         model: "model 3",
         year: 2007,
         available_since: '03-2018',
-        price: 4000
+        price: 4000,
+        estado: "bueno"
     },
     {
         photo: "/assets/images/volkswagen_sirocco.jpg",
@@ -57,7 +63,8 @@ export const product_list = [
         model: "sirocco",
         year: 2016,
         available_since: '02-2017',
-        price: 23000
+        price: 23000,
+        estado: "bueno"
     },
     {
         photo: "/assets/images/toyota_prius.png",
@@ -65,7 +72,8 @@ export const product_list = [
         model: "prius",
         year: 2009,
         available_since: '09-2020',
-        price: 9000
+        price: 9000,
+        estado: "bueno"
     },
     {
         photo: "/assets/images/mercedes_v220.jpg",
@@ -73,6 +81,7 @@ export const product_list = [
         model: "v220",
         year: 1999,
         available_since: '01-2004',
-        price: 1500
+        price: 1500,
+        estado: "malo"
     },
 ]

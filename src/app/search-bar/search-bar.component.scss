@@ -1,0 +1,11 @@
+.buscador {
+    display: flex;
+    flex-flow: row;
+    column-gap: 20px;
+    align-items: center;
+    justify-self: flex-start;
+    
+    input {
+        height: 30px;
+    }
+}

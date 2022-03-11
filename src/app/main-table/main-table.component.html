@@ -1,22 +1,83 @@
-<table>
-    <thead>
-        <tr>
-            <th scope="col" *ngFor="let header of table_headers" (click)="sort(header.toLowerCase())">{{header.replace('_',' ')}}</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let product of products; let i = index;">
-            <td><img [src]="product.photo" alt="(sin foto!)"></td>
-            <td><p>{{product.brand | uppercase}}</p></td>
-            <td><p>{{product.model | titlecase}}</p></td>
-            <td><p>{{product.year}}</p></td>
-            <td><p>{{product.available_since}}</p></td>
-            <td><p [ngStyle]="{'background-color':(product.estado=='bueno')?'#90c390':'#c39090'}">{{product.price | currency:'EUR':'symbol':'.2-2':'es'}}</p></td>
-            <td><p>{{product.price * 1.21 | currency:'EUR':'symbol':'.2-2':'es'}}</p></td>
-            <td class="buttons-cell">
-                <button (click)="reducePrice(i)">Rebajar</button>
-                <button (click)="deleteProduct(i)">Vendido</button>
-            </td>
-        </tr>
-    </tbody>
-</table>
+<div class="akk">
+    <div class="search-bar">
+
+        <h2><i>Find your car!</i></h2>
+        <div class= "search-container">
+            <label id="search-input-label" for="search-input" style="display: none;">Buscar</label>
+            <input id="search-input" [(ngModel)]="prueba"  type="search" placeholder="Search by Brand" name="search-input">
+            <div class="filtro-btn">
+                <img id="fotoflecha" src="assets/images/icons8-flecha-ampliar-32.png" alt="Search" (click)="setSearch()">
+            </div>
+        </div>
+        <div class= "search-container advanced" *ngIf="searchMode=='Advanced'">
+            <div class="search-select">
+                <h3>Model</h3>
+                <select>
+                    <option searchValue.model=""></option>
+                    <option *ngFor="let product of getProducts()" [ngModel]="searchValue.model" ngDefaultControl>{{product.model}}</option>
+                </select>
+            </div>
+            <div class="search-select">
+                <h3>Year</h3>
+                <select>
+                    <option searchValue.year=0></option>
+                    <option *ngFor="let product of getProducts()" [ngModel]="searchValue.year" ngDefaultControl>{{product.year}}</option>
+                </select>
+            </div>
+            <!--
+                <div class="search-span">
+                <div class="values">
+                    <span id="range1">
+                        0
+                    </span>
+                    <span> &dash; </span>
+                    <span id="range2">
+                        {{maxprice}}
+                    </span>
+                    <span>€</span>
+                </div>
+                <div class="box">
+                    <div class="rangeSlider">
+                        <input type="range" class="circleRange" min="0" max={{maxprice}} value="100">
+                    </div>
+                    <div class="value"></div>
+                </div>
+            </div>
+
+            -->
+        </div>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th scope="col">Foto</th>
+                <th scope="col">Marca</th>
+                <th scope="col">Modelo</th>
+                <th scope="col">Año</th>
+                <th scope="col">En venta desde</th>
+                <th scope="col">Precio</th>
+                <th scope="col">PVP</th>
+                <th scope="col">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let product of products | searchfilter: prueba; let i = index;">
+                <td><img [src]="product.photo" alt="(sin foto!)"></td>
+                <td><p>{{product.brand | uppercase}}</p></td>
+                <td><p>{{product.model | titlecase}}</p></td>
+                <td><p>{{product.year}}</p></td>
+                <td><p>{{product.available_since}}</p></td>
+                <td><p [ngStyle]="{'background-color':(product.estado=='bueno')?'#90c390':'#c39090'}">{{product.price | currency:'EUR':'symbol':'.2-2':'es'}}</p></td>
+                <td><p>{{product.price * 1.21 | currency:'EUR':'symbol':'.2-2':'es'}}</p></td>
+                <td class="buttons-cell">
+                    <button (click)="reducePrice(i)">Rebajar</button>
+                    <button (click)="deleteProduct(i)">Vendido</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+
+       
+

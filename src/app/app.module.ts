@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MainTableComponent } from './main-table/main-table.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
+import { SearchfilterPipe } from './searchfilter.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainTableComponent,
-    SearchBarComponent
+    SearchBarComponent,
+    SearchfilterPipe
   ],
   imports: [
     BrowserModule,

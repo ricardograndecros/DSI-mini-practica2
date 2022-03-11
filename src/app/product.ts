@@ -18,6 +18,18 @@ export class Product {
     }
 }
 
+export class SearchElement{
+    public brand: string;
+    public model: string;
+    public year: number;
+
+    constructor(){
+        this.brand="";
+        this.model="";
+        this.year=0;
+    }
+}
+
 
 export const product_list = [
     {

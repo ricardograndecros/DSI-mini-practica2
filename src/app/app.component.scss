@@ -8,3 +8,13 @@ $background-color: #f0f0f0;
     align-items: center;
     background-color: $background-color;
 }
+
+.main-table{
+    display: flex;
+    margin-top: 30px;
+    width:100%;
+}
+
+.search-bar{
+    width:100%;
+}

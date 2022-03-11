@@ -21,6 +21,19 @@ td {
     border: 1px solid black; 
 }
 
+th {
+    cursor: pointer;
+    text-align: center;
+    p {
+        width: auto;
+        float: left;
+    }
+    img {
+        height: 25px;
+        width: 25px;
+    }
+}
+
 .buttons-cell {
     display: flex;
     flex-flow: column;

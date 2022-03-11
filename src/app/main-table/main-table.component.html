@@ -50,7 +50,10 @@
     <table>
         <thead>
             <tr>
-                <th scope="col" *ngFor="let header of table_headers" (click)="sort(header.toLowerCase())">{{header.replace('_',' ')}}</th>
+                <th scope="col" *ngFor="let header of table_headers" (click)="sort(header.toLowerCase())">
+                    <p>{{header.replace('_',' ')}}</p>
+                    <img src="../assets/images/sort-solid.svg">
+                </th>
             </tr>
         </thead>
         <tbody>

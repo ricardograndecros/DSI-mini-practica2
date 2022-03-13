@@ -56,39 +56,40 @@ export class MainTableComponent implements OnInit {
     }
   }
 
-  getProducts(){
-    /*
-    if(!this.products && !this.searchValue.brand && !this.searchValue.model && this.searchValue.year==0){
-      return this.products;
-    }
+  getYears(){
+    let yearsaux: number[] = []
+    let productaux = this.products
     
-    let productsfilter = this.products
-
     if(this.searchValue.brand){
-      productsfilter.filter(product =>
+      productaux = productaux.filter(product =>
         product.brand.toLocaleLowerCase().includes(this.searchValue.brand.toLocaleLowerCase())
       )
     }
-
-    if(this.searchValue.model){
-      productsfilter.filter(product =>
-        product.model.toLocaleLowerCase().includes(this.searchValue.brand.toLocaleLowerCase())
-      )
-    }
-
-    if(this.searchValue.year!=0){
-      productsfilter.filter(product =>
-        product.year==this.searchValue.year)
-    }
     
-    return productsfilter;*/
-    if(!this.products || !this.prueba){
-      return this.products;
-    }
+    productaux.forEach(product => {
+      if(yearsaux.indexOf(product.year)==-1){
+        yearsaux.push(product.year)
+      }
+    });
 
-    return this.products.filter(product =>
-        //Cambiar para que devuelva solo si empieza
-        product.brand.toLocaleLowerCase().includes(this.prueba.toLocaleLowerCase())
+    return yearsaux;
+  }
+  getModel(){
+    let modelsaux: string[]=[]
+    let productaux = this.products
+    
+    if(this.searchValue.brand!=""){
+      productaux = productaux.filter(product =>
+        product.brand.toLocaleLowerCase().includes(this.searchValue.brand.toLocaleLowerCase())
       )
+    }
+    console.log(productaux)
+    productaux.forEach(product => {
+      if(modelsaux.indexOf(product.model)==-1){
+        modelsaux.push(product.model)
+      }
+    });
+
+    return modelsaux
   }
 }

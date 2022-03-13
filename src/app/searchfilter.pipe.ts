@@ -6,15 +6,13 @@ import { Product, SearchElement } from './product';
 })
 export class SearchfilterPipe implements PipeTransform {
 
-  transform(products: Product[], brand: string): Product[] {
-
+  transform(products: Product[], prueba: string): Product[] {
     
-    if(!products && !brand){
+    if(!products || !prueba){
       return products;
     }
     return products.filter(product =>
-      product.brand.toLocaleLowerCase().includes(brand.toLocaleLowerCase())
+      product.brand.toLocaleLowerCase().includes(prueba.toLocaleLowerCase())
     )
   }
-
 }

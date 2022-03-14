@@ -21,12 +21,12 @@ export class Product {
 export class SearchElement{
     public brand: string;
     public model: string;
-    public year: number;
+    public year: string;
 
     constructor(){
         this.brand="";
         this.model="";
-        this.year=0;
+        this.year="";
     }
 }
 

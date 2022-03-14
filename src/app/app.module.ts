@@ -6,14 +6,14 @@ import { AppComponent } from './app.component';
 import { MainTableComponent } from './main-table/main-table.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { SearchfilterPipe } from './searchfilter.pipe';
-import { FormsModule} from '@angular/forms'
+import { FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainTableComponent,
     SearchBarComponent,
-    SearchfilterPipe
+    SearchfilterPipe,
   ],
   imports: [
     BrowserModule,

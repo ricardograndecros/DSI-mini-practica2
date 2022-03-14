@@ -74,25 +74,23 @@ export class MainTableComponent implements OnInit {
         yearsaux.push(product.year)
       }
     });
-
     return yearsaux;
   }
   getModel(){
     let modelsaux: string[]=[]
     let productaux = this.products
+    console.log("El modelo apuntado es",this.prueba)
     
     if(this.searchValue.brand!=""){
       productaux = productaux.filter(product =>
         product.brand.toLocaleLowerCase().includes(this.searchValue.brand.toLocaleLowerCase())
       )
     }
-    console.log(productaux)
     productaux.forEach(product => {
       if(modelsaux.indexOf(product.model)==-1){
         modelsaux.push(product.model)
       }
     });
-
     return modelsaux
   }
 }

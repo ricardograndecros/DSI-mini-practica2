@@ -4,7 +4,7 @@
         <h2><i>Find your car!</i></h2>
         <div class= "search-container">
             <label id="search-input-label" for="search-input" style="display: none;">Buscar</label>
-            <input id="search-input" [(ngModel)]="prueba"  type="search" placeholder="Search by Brand" name="search-input">
+            <input id="search-input" [(ngModel)]="searchValue.brand"  type="search" placeholder="Search by Brand" name="search-input">
             <div class="filtro-btn">
                 <img id="fotoflecha" src="assets/images/icons8-flecha-ampliar-32.png" alt="Search" (click)="setSearch()">
             </div>
@@ -12,16 +12,16 @@
         <div class= "search-container advanced" *ngIf="searchMode=='Advanced'">
             <div class="search-select">
                 <h3>Model</h3>
-                <select>
-                    <option searchValue.model=""></option>
-                    <option *ngFor="let model of getModel()" [ngModel]="searchValue.model" ngDefaultControl>{{model}}</option>
+                <select [(ngModel)]="searchValue.model">
+                    <option></option>
+                    <option *ngFor="let model of getModel()">{{model}}</option>
                 </select>
             </div>
             <div class="search-select">
                 <h3>Year</h3>
-                <select>
-                    <option searchValue.year=0></option>
-                    <option *ngFor="let year of getYears()" [ngModel]="searchValue.year" ngDefaultControl>{{year}}</option>
+                <select [(ngModel)]="searchValue.year">
+                    <option></option>
+                    <option *ngFor="let year of getYears()">{{year}}</option>
                 </select>
             </div>
         </div>
@@ -38,7 +38,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let product of products | searchfilter: prueba; let i = index;">
+            <tr *ngFor="let product of products | searchfilter: searchValue.brand:searchValue.model:searchValue.year; let i = index;">
                 <td><img [src]="product.photo" alt="(sin foto!)"></td>
                 <td><p>{{product.brand | uppercase}}</p></td>
                 <td><p>{{product.model | titlecase}}</p></td>

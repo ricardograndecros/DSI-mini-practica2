@@ -1,5 +1,9 @@
 # DSIMiniPractica2
 
+Just a small project for learning Angular. The website shows a product list with a search bar and some filters
+
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.3.
 
 ## Development server
